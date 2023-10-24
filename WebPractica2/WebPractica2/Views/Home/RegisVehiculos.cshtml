@@ -1,7 +1,84 @@
-﻿
+﻿@model WebPractica2.Entities.RegisVehiculosEnt
+
 @{
     ViewBag.Title = "RegisVehiculos";
 }
 
-<h2>RegisVehiculos</h2>
+<h2>Registar Vehículos</h2>
+
+<!-- row -->
+<div class="row">
+    <div class="col-xl-6 col-xxl-12">
+        <div class="card">
+            <div class="card-header">
+                @*<h4 class="card-title">Horizontal Form</h4>*@
+            </div>
+            <div class="card-body">
+                <div class="basic-form">
+
+                    @using (@Html.BeginForm("RegisVehiculo", "Home", FormMethod.Post))
+                    {
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Marca</label>
+
+                                @Html.TextBoxFor(m => m.Marca, new { @type = "text", @class = "form-control", @placeholder = "" })
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Modelo</label>
+
+                                @Html.TextBoxFor(m => m.Modelo, new { @type = "text", @class = "form-control", @placeholder = "" })
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Color</label>
+
+                                @Html.TextBoxFor(m => m.Color, new { @type = "text", @class = "form-control", @placeholder = "" })
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Precio</label>
+
+                                @Html.TextBoxFor(m => m.Precio, new { @type = "number", @class = "form-control", @placeholder = "" })
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Vendedor</label>
+
+                                @Html.TextBoxFor(m => m.Vendedor, new { @type = "text", @class = "form-control", @placeholder = "" })
+
+                            </div>
+                        </div>
+                        @*<div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label>State</label>
+                                    <select id="inputState" class="form-control">
+                                        <option selected>Choose...</option>
+                                        <option>Option 1</option>
+                                        <option>Option 2</option>
+                                        <option>Option 3</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label>Zip</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label">
+                                        Check me out
+                                    </label>
+                                </div>
+                            </div>*@
+                        <input type="submit" class="btn btn-primary" value="Registrar">
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
