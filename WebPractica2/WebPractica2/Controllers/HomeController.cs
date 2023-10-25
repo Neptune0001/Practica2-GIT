@@ -12,6 +12,8 @@ namespace WebPractica2.Controllers
     {
         RegisVenderoresModel VendModel = new RegisVenderoresModel();
         RegisVehiculosModel VehiModel = new RegisVehiculosModel();
+        ConsultaVehiModel Consult = new ConsultaVehiModel();
+
         //This controller has views
 
         public ActionResult Index()
@@ -28,8 +30,24 @@ namespace WebPractica2.Controllers
         [HttpPost]
         public ActionResult RegisVendedores(RegisVendedoresEnt entidad)
         {
-            VendModel.RegisVendedores(entidad);
-            return View();
+            entidad.Estado = true;
+
+            string res = VendModel.RegisVendedores(entidad);
+
+            if (res == "OK")
+            {
+                ViewBag.Alert = "alert-success";
+                ViewBag.Mensaje = "Registro Realizado";
+                return View();
+            }
+            else
+            {
+                ViewBag.Alert = "alert-danger";
+                ViewBag.Mensaje = "Ha ocurrido un error";
+                return View();
+            }
+
+            
         }
 
         [HttpGet]
@@ -41,21 +59,30 @@ namespace WebPractica2.Controllers
         [HttpPost]
         public ActionResult RegisVehiculos(RegisVehiculosEnt entidad)
         {
-            VehiModel.RegisVehiculos(entidad);
-            return View();
+            string res = VehiModel.RegisVehiculos(entidad);
+
+            if (res == "OK")
+            {
+                ViewBag.Alert = "alert-success";
+                ViewBag.Mensaje = "Registro Realizado";
+                return View();
+            }
+            else
+            {
+                ViewBag.Alert = "alert-danger";
+                ViewBag.Mensaje = "Ha ocurrido un error";
+                return View();
+            }
+
         }
 
         [HttpGet]
-        public ActionResult ConsulVehiculos()  
-        { 
-            return View(); 
+        public ActionResult ConsulVehiculos()
+        {
+            //var datos = Consult.ConsulVend();
+            //return View(datos);
+            return View();
         }
-
-        //[HttpPost]
-        //public ActionResult ConsulVehiculos()
-        //{
-        //    return View();
-        //}
 
     }
 }

@@ -1,7 +1,38 @@
-﻿
+﻿@*@model IEnumerable<WebPractica2.Entities.RegisVehiculosEnt>*@
+
 @{
     ViewBag.Title = "ConsulVehiculos";
 }
 
-<h2>ConsulVehiculos</h2>
+<h2>Consulta Vehiculos</h2>
 
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Información de Usuarios</h4>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Cedula</th>
+                        <th>Nombre</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @*@foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.id</td>
+                            <td>@item.Nombre</td>
+                            <td>@item.Marca</td>
+                        </tr>
+                    }*@
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

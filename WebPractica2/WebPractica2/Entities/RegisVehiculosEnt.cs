@@ -7,6 +7,8 @@ namespace WebPractica2.Entities
 {
     public class RegisVehiculosEnt
     {
+        public long IdVehiculo { get; set; }
+
         public string Marca { get; set; }
 
         public string Modelo { get; set; }

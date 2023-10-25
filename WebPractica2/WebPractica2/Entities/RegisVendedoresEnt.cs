@@ -7,12 +7,14 @@ namespace WebPractica2.Entities
 {
     public class RegisVendedoresEnt
     {
+        public long IdVendedor { get; set; }
+
         public string Cedula { get; set; }
 
         public string Nombre { get; set; }
 
         public string Correo { get; set; }
 
-        public string Estado { get; set; }
+        public bool Estado { get; set; }
     }
 }
